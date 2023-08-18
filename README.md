@@ -1,10 +1,6 @@
-# Terra Java Service template
+# ## ${{values.name}}
 
 ## Using this repo
-
-```text
-PLEASE REMOVE THIS SECTION
-```
 
 This repository contains codified best practices for creating a new service/application in the Terra ecosystem.
 
