@@ -6,17 +6,18 @@ metadata:
   description: |
     Placeholder description...
   tags:
-    - go
-    - sherlock
-    - kubernetes
-    - dsp-devops
+    - java
+    - dsp
+    - terra
+    - springboot
+    - ${{values.owner}}
   annotations:
-    github.com/project-slug: databiosphere/${{values.name}}
+    github.com/project-slug: ${{values.organization}}/${{values.name}}
 spec:
   type: service
-  lifecycle: production
+  lifecycle: experimental
   owner: ${{values.owner}}
-  system: platform
+  system: terra
   providesApis:
     - ${{values.name}}-api
 ---
@@ -30,9 +31,10 @@ metadata:
     - java
     - dsp
     - terra
+    - springboot
     - ${{values.owner}}
   annotations:
-    github.com/project-slug: broadinstitute/sherlock
+    github.com/project-slug: ${{values.organization}}/${{values.name}}
 spec:
   type: openapi
   lifecycle: experimental
