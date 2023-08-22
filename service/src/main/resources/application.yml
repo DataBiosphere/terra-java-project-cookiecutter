@@ -5,8 +5,7 @@ env:
   db:
     host: ${DATABASE_HOSTNAME:127.0.0.1}:5432
     init: ${INIT_DB:false}
-    # these values are also referenced in scripts/init-db
-    name: ${DATABASE_NAME:javatemplate_db}
+    name: ${DATABASE_NAME:${{values.projectSlug}}_db}
     user: ${DATABASE_USER:dbuser}
     password: ${DATABASE_USER_PASSWORD:dbpwd}
   tracing:
