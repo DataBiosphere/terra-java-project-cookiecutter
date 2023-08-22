@@ -81,7 +81,6 @@ jobs:
       {% endraw %}
       chart-name: '${{values.projectSlug}}'
       {% raw %}
-      environment-name: 'dev'
     permissions:
       contents: 'read'
       id-token: 'write'
