@@ -1,3 +1,4 @@
+{% raw %}
 name: Integration Tests
 
 on:
@@ -172,3 +173,4 @@ jobs:
             env.STATUS, needs.test-env.outputs.test-env,
             env.STATUS == 'success' && ':check_green:' || ':sadpanda:') }}
           username: 'Data Explorer Tests'
+{% endraw %} 
