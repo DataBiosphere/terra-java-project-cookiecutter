@@ -1,3 +1,4 @@
+{% raw %}
 name: Build and Test
 
 on:
@@ -218,3 +219,4 @@ jobs:
         with:
           workflow: Tag
           token: ${{ secrets.BROADBOT_TOKEN }}
+{% endraw %}

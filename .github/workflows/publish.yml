@@ -1,3 +1,4 @@
+{% raw %}
 name: Publish and deploy
 on: create
 
@@ -77,7 +78,10 @@ jobs:
     needs: publish-job
     with:
       new-version: ${{ needs.publish-job.outputs.tag }}
+      {% endraw %}
       chart-name: '${{values.projectSlug}}'
+      {% raw %}
+      environment-name: 'dev'
     permissions:
       contents: 'read'
       id-token: 'write'
@@ -88,12 +92,15 @@ jobs:
     needs: [publish-job, report-to-sherlock]
     with:
       new-version: ${{ needs.publish-job.outputs.tag }}
+      {% endraw %}
       chart-name: '${{values.projectSlug}}'
+      {% raw %}
       environment-name: 'dev'
     secrets:
       sync-git-token: ${{ secrets.BROADBOT_TOKEN }}
     permissions:
       id-token: 'write'
+{% endraw %}
 
   # report workflow status in slack
   # see https://docs.google.com/document/d/1G6-whnNJvON6Qq1b3VvRJFC7M9M-gu2dAVrQHDyp9Us/edit?usp=sharing
@@ -101,7 +108,7 @@ jobs:
     uses: broadinstitute/sherlock/.github/workflows/client-report-workflow.yaml@main
     with:
       # Channels to notify upon workflow success or failure
-      notify-slack-channels-upon-workflow-completion: '#ap-k8s-monitor'
+      notify-slack-channels-upon-workflow-completion: '${{values.slackChannel}}'
 
       # Channels to notify upon workflow success only
       # notify-slack-channels-upon-workflow-success: "#channel-here"
