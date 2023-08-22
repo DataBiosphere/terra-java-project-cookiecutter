@@ -115,4 +115,4 @@ jobs:
       sync-git-token: ${{ secrets.BROADBOT_TOKEN }}
     permissions:
       id-token: 'write'
-{%}
+{% endraw %}
