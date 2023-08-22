@@ -1,3 +1,4 @@
+{% raw %}
 name: Trivy
 on: workflow_dispatch
 
@@ -32,3 +33,4 @@ jobs:
         uses: broadinstitute/dsp-appsec-trivy-action@v1
         with:
           image: ${{ steps.image-name.outputs.name }}
+{% endraw %}

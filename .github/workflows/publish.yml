@@ -1,3 +1,4 @@
+{% raw %}
 name: Publish and deploy
 on: create
 
@@ -92,7 +93,10 @@ jobs:
     needs: publish-job
     with:
       new-version: ${{ needs.publish-job.outputs.tag }}
+      {% endraw %}
       chart-name: '${{values.projectSlug}}'
+      {% raw %}
+      environment-name: 'dev'
     permissions:
       contents: 'read'
       id-token: 'write'
@@ -103,9 +107,12 @@ jobs:
     needs: [publish-job, report-to-sherlock]
     with:
       new-version: ${{ needs.publish-job.outputs.tag }}
+      {% endraw %}
       chart-name: '${{values.projectSlug}}'
+      {% raw %}
       environment-name: 'dev'
     secrets:
       sync-git-token: ${{ secrets.BROADBOT_TOKEN }}
     permissions:
       id-token: 'write'
+{%}
