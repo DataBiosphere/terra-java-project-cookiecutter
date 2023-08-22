@@ -21,4 +21,4 @@ jobs:
           RELEASE_BRANCHES: main
           VERSION_FILE_PATH: settings.gradle
           VERSION_LINE_MATCH: "^\\s*gradle.ext.releaseVersion\\s*=\\s*'.*'"
-{% endraw % }
+{% endraw %}
