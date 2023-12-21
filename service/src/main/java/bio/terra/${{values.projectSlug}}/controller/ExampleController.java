@@ -10,8 +10,8 @@ import bio.terra.${{values.projectSlug}}.model.Example;
 import bio.terra.${{values.projectSlug}}.service.ExampleService;
 import io.micrometer.core.instrument.Metrics;
 import io.micrometer.core.instrument.Tag;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
