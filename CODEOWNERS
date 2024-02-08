@@ -1,1 +1,1 @@
-* @${{values.owner}}
+* @${{values.organization}}/${{values.owner}}
