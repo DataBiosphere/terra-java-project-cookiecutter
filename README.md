@@ -1,4 +1,4 @@
-### ${{values.name}}
+# ${{values.name}}
 
 ## Using this repo
 
