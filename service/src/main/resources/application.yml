@@ -6,8 +6,8 @@ env:
     host: ${DATABASE_HOSTNAME:127.0.0.1}:5432
     init: ${INIT_DB:false}
     name: ${DATABASE_NAME:${{values.projectSlug}}_db}
-    password: ${DATABASE_USER_PASSWORD:dbpwd}
     user: ${DATABASE_USER:dbuser}
+    password: ${DATABASE_USER_PASSWORD:dbpwd}
   tracing:
     exportEnabled: ${CLOUD_TRACE_ENABLED:false}
     samplingRate: ${SAMPLING_PROBABILITY:0}

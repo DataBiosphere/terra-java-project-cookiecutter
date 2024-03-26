@@ -2,6 +2,7 @@ package bio.terra.${{values.projectSlug}}.dao;
 
 import bio.terra.${{values.projectSlug}}.model.Example;
 import io.opentelemetry.instrumentation.annotations.WithSpan;
+import io.opencensus.contrib.spring.aop.Traced;
 import java.util.Optional;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.RowMapper;
