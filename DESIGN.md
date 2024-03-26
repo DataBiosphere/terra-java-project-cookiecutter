@@ -1,4 +1,4 @@
-# terra-java-project-template Design
+# ${{values.name}} Design
 
 This repo is responsible for housing the following information:
 
@@ -10,7 +10,7 @@ This repo is responsible for housing the following information:
 ## service/
 
 The Application's service is built and configured from
-[bio.terra.javatemplate.App](./service/src/main/java/bio/terra/javatemplate/App.java).
+[bio.terra.${{values.projectSlug}}.App](./service/src/main/java/bio/terra/${{values.projectSlug}}/App.java).
 
 See [terra-common-lib](https://github.com/DataBiosphere/terra-common-lib/)
 for the following additionally configured integrations:
@@ -20,13 +20,13 @@ for the following additionally configured integrations:
 - [bio.terra.common.migrate](https://github.com/DataBiosphere/terra-common-lib/tree/develop/src/main/java/bio/terra/common/migrate)
 - [bio.terra.common.retry.transaction](https://github.com/DataBiosphere/terra-common-lib/tree/develop/src/main/java/bio/terra/common/retry/transaction)
 - [bio.terra.common.tracing](https://github.com/DataBiosphere/terra-common-lib/tree/develop/src/main/java/bio/terra/common/tracing)
-- [bio.terra.javatemplate](./service/src/main/java/bio/terra/javatemplate)
+- [bio.terra.${{values.projectSlug}}](./service/src/main/java/bio/terra/${{values.projectSlug}})
 
 Local service directory structure supports this structure:
 
 - `config/`: type safe configs
 - `controller/`: public facing api controllers
-- `dao/`: ORM mapping from the configured database to `bio.terra.javatemplate.model`
+- `dao/`: ORM mapping from the configured database to `bio.terra.${{values.projectSlug}}.model`
 - `iam/`: remote iam setup and config
 - `model/`: the service's internal model
 - `service/`: internal service objects containing the business logic
