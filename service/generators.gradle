@@ -39,6 +39,6 @@ gitProperties {
     keys = []
     customProperty('${{values.projectSlug}}.version.gitTag', { it.describe(tags: true) })
     customProperty('${{values.projectSlug}}.version.gitHash', { it.head().abbreviatedId })
-    customProperty('${{values.projectSlug}}.version.github', { "https://github.com/DataBiosphere/service/${{values.projectSlug}}/tree/${it.describe(tags: true)}" })
+    customProperty('${{values.projectSlug}}.version.github', { "https://github.com/DataBiosphere/service/${{values.name}}/tree/${it.describe(tags: true)}" })
     customProperty('${{values.projectSlug}}.version.build', version)
 }
