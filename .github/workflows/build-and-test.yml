@@ -191,13 +191,27 @@ jobs:
           path: |
             application.log
 
+  dispatch-tag:
+    needs: [ build, unit-tests-and-sonar, source-clear, integration-tests ]
+    runs-on: ubuntu-latest
+
+    if: success() && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Fire off tag action
+        uses: broadinstitute/workflow-dispatch@v3
+        with:
+          workflow: Tag
+          token: ${{ secrets.BROADBOT_TOKEN }}
+  {% endraw %}
+
   # report workflow status in slack
   # see https://docs.google.com/document/d/1G6-whnNJvON6Qq1b3VvRJFC7M9M-gu2dAVrQHDyp9Us/edit?usp=sharing
   report-workflow:
     uses: broadinstitute/sherlock/.github/workflows/client-report-workflow.yaml@main
     with:
       # Channels to notify upon workflow success or failure
-      notify-slack-channels-upon-workflow-completion: '#ap-k8s-monitor'
+      notify-slack-channels-upon-workflow-completion: '${{values.slackChannel}}'
 
       # Channels to notify upon workflow success only
       # notify-slack-channels-upon-workflow-success: "#channel-here"
@@ -219,4 +233,3 @@ jobs:
         with:
           workflow: Tag
           token: ${{ secrets.BROADBOT_TOKEN }}
-{% endraw %}

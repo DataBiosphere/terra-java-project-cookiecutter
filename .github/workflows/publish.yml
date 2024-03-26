@@ -100,7 +100,6 @@ jobs:
     permissions:
       id-token: 'write'
 {% endraw %}
-<<<<<<< HEAD
 
   # report workflow status in slack
   # see https://docs.google.com/document/d/1G6-whnNJvON6Qq1b3VvRJFC7M9M-gu2dAVrQHDyp9Us/edit?usp=sharing
@@ -117,5 +116,3 @@ jobs:
       # notify-slack-channels-upon-workflow-failure: "#channel-here"
     permissions:
       id-token: 'write'
-=======
->>>>>>> f7e44e0 (autocomplete..)
