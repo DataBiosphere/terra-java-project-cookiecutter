@@ -30,7 +30,7 @@ architecture in [./transactions](./transactions.md)
 Controllers are the api entry point to the
 service. [OpenAPI](../service/src/main/resources/api/openapi.yml) is used
 to [generate](../service/generators.gradle) `*Api` interfaces which are implemented
-by [controller/](../service/src/main/java/bio/terra/javatemplate/controller)
+by [controller/](../service/src/main/java/bio/terra/${{values.projectSlug}}/controller)
 classes. In this way we can craft a service's api and have the implementation flow from there.
 Alternatively we could use java annotations on controller classes to generate OpenAPI but that tends
 to lead to a poor API, we think about the api second or not at all.

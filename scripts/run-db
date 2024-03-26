@@ -22,7 +22,7 @@ source $(dirname $0)/init.sh
 # these values are currently shared in other scripts
 # init-db/postgres-init.sql
 # service/src/main/resources/application.yml
-DATABASE_NAME=${DATABASE_NAME:-javatemplate_db}
+DATABASE_NAME=${DATABASE_NAME:-${{values.projectSlug}}_db}
 DATABASE_USER=${DATABASE_USER:-dbuser}
 
 clean_db=false

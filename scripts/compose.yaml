@@ -1,9 +1,9 @@
-name: javatemplate
+name: ${{values.projecSlug}}
 
 services:
 
   service:
-    image: terra-java-project-template
+    image: ${{values.name}}
     depends_on:
       - database
     environment:
