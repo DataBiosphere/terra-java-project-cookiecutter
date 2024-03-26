@@ -73,7 +73,7 @@ With IntelliJ IDEA open, perform the following steps to set up your IDE:
 
 1. Select `File` => `Open ...`
 2. Select the root directory of this repo on your local filesystem  
-   (e.g. `~/workbench/terra-java-project-template`)
+   (e.g. `~/workbench/${{values.name}}`)
 3. Click `Open`
 
 IntelliJ will detect that this is a `gradle`-based project and start compiling your repo.
