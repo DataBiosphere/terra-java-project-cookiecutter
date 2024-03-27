@@ -1,4 +1,4 @@
-name: ${{values.projecSlug}}
+name: ${{values.projectSlug}}
 
 services:
 
